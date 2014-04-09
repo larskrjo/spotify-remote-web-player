@@ -16,7 +16,7 @@ Throughout this guide, paths will always be relative to spotify-remote-web-playe
 
 Requirements
 ------------
-* Both the frontend server and backend server must be connected to internet, and hence not behind a firewall. The ports used are TCP 80 and TCP 23456 for frontend and backend respectively.
+* Both the frontend server and backend server must be connected to internet, and hence not behind a firewall. The ports used are TCP 80 and TCP backend port (whichever you choose) for frontend and backend respectively.
 
 ###Frontend:
 * Web server that supports html, css and javascript.
