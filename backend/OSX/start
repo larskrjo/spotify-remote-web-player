@@ -6,4 +6,4 @@ application_key_path=../spotify_appkey.key
 pkill server
 make clean
 make
-./server -u $username -p $password -l $playlist_name -L $playlist_uri -A $application_key_path -H $hostname -P $port
+./server -u $username -p $password -l $playlist_name -L $playlist_uri -A $application_key_path -H $hostname -P $port &
