@@ -1,0 +1,9 @@
+#/bin/bash
+
+%%% DO NOT TOUCH %%%
+source ../config
+application_key_path=../spotify_appkey.key
+pkill server
+make clean
+make
+./server -u $username -p $password -l $playlist -A $application_key_path -H $hostname -P $port

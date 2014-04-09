@@ -1,0 +1,42 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Libraries
+*.lib
+*.a
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+backend/OSX/server
+
+# Xcode
+*.xccheckout
+
+# Installed files
+libs/OSX/jansson-2.6
+libs/OSX/apr-1.5.0
+libs/OSX/libevent-2.0.21-stable
+
+# Cached files
+backend/OSX/.cache
+backend/OSX/.settings
+backend/Linux/.cache
+backend/Linux/.settings
+
+# Privacy files
+backend/spotify_appkey.key
+backend/config
