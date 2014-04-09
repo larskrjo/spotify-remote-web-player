@@ -98,7 +98,7 @@ port=your_port
 " >> backend/config
 ```
 Replace your_username, your_password, your_playlist_name, your_playlist_uri, your_hostname and your_port
-with your username, password, playlist name (do not use a playlist with space), playlist uri, backend hostname and backend port respectively.
+with your username, password, playlist name (do not use a playlist name with space), playlist uri, backend hostname and backend port respectively.
 
 ###Frontend
 ####Set address for both the frontend server and backend server
