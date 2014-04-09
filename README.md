@@ -19,7 +19,7 @@ Requirements
 * Both the frontend server and backend server must be connected to internet, and hence not behind a firewall. The ports used are TCP 80 and TCP backend port (whichever you choose) for frontend and backend respectively.
 
 ###Frontend:
-* Web server that supports html, css and javascript.
+* Web server that supports html, css and javascript. Apache or Tomcat should do it, there are plenty of tutorials on how to install one.
 
 ###Backend:
 * A Linux or OSX server with a sound card, sound card drivers and sudo rights.
