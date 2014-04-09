@@ -40,10 +40,20 @@ chmod 777 backend/{OSX/Linux}/start
 ```
 ####Libraries
 In order to run the backend server, the following libraries must be compiled and installed.
+#####Spotify
+```
+Linux:
+cd libs/Linux
+tar -zxvf libspotify-12.1.51-Linux-x86_64-release.tar.gz 
+cd libspotify-12.1.51-Linux-x86_64-release
+sudo make install prefix=/usr/local
+OSX:
+// Library does not need to be installed
+```
 #####Jansson
 ```
-OSX:
-cd libs/OSX
+Linux & OSX:
+cd libs/{OSX/Linux}
 tar -zxvf jansson-2.6.tar.gz
 cd jansson-2.6
 ./configure
@@ -52,8 +62,8 @@ sudo make install
 ```
 #####APR
 ```
-OSX:
-cd libs/OSX
+Linux & OSX:
+cd libs/{OSX/Linux}
 tar -zxvf apr-1.5.0.tar.gz
 cd apr-1.5.0
 ./configure --prefix=/usr/local
@@ -62,8 +72,8 @@ sudo make install
 ```
 #####Event
 ```
-OSX:
-cd libs/OSX
+Linux & OSX:
+cd libs/{OSX/Linux}
 tar -zxvf libevent-2.0.21-stable.tar.gz
 cd libevent-2.0.21-stable
 ./configure

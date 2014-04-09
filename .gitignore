@@ -22,6 +22,7 @@
 *.x86_64
 *.hex
 backend/OSX/server
+backend/Linux/server
 
 # Xcode
 *.xccheckout
@@ -30,6 +31,10 @@ backend/OSX/server
 libs/OSX/jansson-2.6
 libs/OSX/apr-1.5.0
 libs/OSX/libevent-2.0.21-stable
+libs/Linux/jansson-2.6
+libs/Linux/apr-1.5.0
+libs/Linux/libevent-2.0.21-stable
+libs/Linux/libspotify-12.1.51-Linux-x86_64-release
 
 # Cached files
 backend/OSX/.cache
