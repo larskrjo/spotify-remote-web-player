@@ -91,7 +91,8 @@ echo -e "
 #bin/bash \n
 username=your_username \n
 password=your_password \n
-playlist=your_playlist \n
+playlist_name=your_playlist_name \n
+playlist_uri=your_playlist_uri \n
 hostname=your_hostname \n
 port=your_port
 " >> backend/config

@@ -74,6 +74,18 @@
             argument = "-A /Users/lars.johansen/Documents/Spotify/webserver/spotify_appkey.key"
             isEnabled = "YES">
          </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-H 127.0.0.1"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-P 23456"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-L spotify:user:kurume:playlist:5xGIekf3Gw3S4rDwgQaZWF"
+            isEnabled = "YES">
+         </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>

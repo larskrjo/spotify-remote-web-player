@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <libspotify/api.h>
 #include <strings.h>
+#include <stdlib.h>
 #include "helper.h"
 #include "globals.h"
 #include "container-callbacks.h"
@@ -48,9 +49,6 @@ void playlist_added(sp_playlistcontainer *pc, sp_playlist *pl,
     
 	if (!strcasecmp(sp_playlist_name(pl), g_listname)) {
 		g_playlist = pl;
-        g_playlist_uri = (char*)malloc(kPlaylistLinkLength*sizeof(char));
-        sp_link *playlist_link = sp_link_create_from_playlist(g_playlist);
-        sp_link_as_string(playlist_link, g_playlist_uri, kPlaylistLinkLength);
 		try_jukebox_start();
 	}
 }

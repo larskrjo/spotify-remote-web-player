@@ -116,7 +116,7 @@ int main(int argc, char **argv) {
             
             {NULL, 0, NULL, 0}
         };
-        const char optstring[] = "u:p:l:c:k:A:C:S:T:U:H:P:";
+        const char optstring[] = "u:p:l:L:c:k:A:C:S:T:U:H:P:";
         
         for (int c; (c = getopt_long(argc, argv, optstring, opts, NULL)) != -1; ) {
             switch (c) {
@@ -130,6 +130,10 @@ int main(int argc, char **argv) {
                     
                 case 'l':
                     g_listname = strdup(optarg);
+                    break;
+                    
+                case 'L':
+                    g_playlist_uri = strdup(optarg);
                     break;
                     
                 case 'c':
