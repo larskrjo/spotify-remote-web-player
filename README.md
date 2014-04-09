@@ -23,7 +23,7 @@ Requirements
 
 ###Backend:
 * A Linux or OSX server with a sound card, sound card drivers and sudo rights.
-* The backend server must be run using premium spotify user credentials.
+* The backend server must run the program using premium spotify user credentials.
 
 Installation
 ------------
