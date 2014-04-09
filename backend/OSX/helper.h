@@ -16,6 +16,7 @@
 extern const char* g_username;
 extern const char* g_password;
 extern const char* g_listname;
+extern char* g_playlist_uri;
 extern sp_session *g_sess;
 
 void print_thread_name(char* func);

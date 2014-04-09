@@ -115,7 +115,7 @@ void playlist_request(struct evhttp_request *req)
 {
     pthread_mutex_lock(&playlist_mutex);
     p_request = req;
-    sp_link *playlist_link = sp_link_create_from_string("spotify:user:kurume:playlist:5xGIekf3Gw3S4rDwgQaZWF");
+    sp_link *playlist_link = sp_link_create_from_string(g_playlist_uri);
     sp_playlist *playlist = sp_playlist_create(g_sess, playlist_link);
     sp_link_release(playlist_link);
     // If loaded
@@ -136,7 +136,7 @@ void remove_request(struct evhttp_request *request, char* localId) {
     pthread_mutex_lock(&playlist_mutex);
     int i = atoi(localId);
     
-    sp_link *playlist_link = sp_link_create_from_string("spotify:user:kurume:playlist:5xGIekf3Gw3S4rDwgQaZWF");
+    sp_link *playlist_link = sp_link_create_from_string(g_playlist_uri);
     sp_playlist *playlist = sp_playlist_create(g_sess, playlist_link);
     int num_tracks = sp_playlist_num_tracks(playlist);
     while(g_track_index == i) {
@@ -160,7 +160,7 @@ void remove_request(struct evhttp_request *request, char* localId) {
  */
 void add_request(struct evhttp_request *request, char* trackUri) {
     pthread_mutex_lock(&playlist_mutex);
-    sp_link *playlist_link = sp_link_create_from_string("spotify:user:kurume:playlist:5xGIekf3Gw3S4rDwgQaZWF");
+    sp_link *playlist_link = sp_link_create_from_string(g_playlist_uri);
     sp_playlist *playlist = sp_playlist_create(g_sess, playlist_link);
     sp_link *song_link = sp_link_create_from_string(trackUri);
     sp_track *track = sp_link_as_track(song_link);

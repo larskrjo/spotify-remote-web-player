@@ -13,6 +13,7 @@
 const char* g_username = NULL;
 const char* g_password = NULL;
 const char* g_listname = NULL;
+char* g_playlist_uri = NULL;
 sp_session *g_sess = NULL;
 
 int get_current_seconds();

@@ -25,7 +25,7 @@ void process_events(evutil_socket_t socket, short what, void *userdata) {
     event_del(state->timer);
     int timeout = 0;
     if (g_playback_done) {
-        sp_link *playlist_link = sp_link_create_from_string("spotify:user:kurume:playlist:5xGIekf3Gw3S4rDwgQaZWF");
+        sp_link *playlist_link = sp_link_create_from_string(g_playlist_uri);
         sp_playlist *playlist = sp_playlist_create(state->session, playlist_link);
         int num_tracks = sp_playlist_num_tracks(playlist);
         int i = g_track_index;
@@ -138,107 +138,5 @@ void handle_request(struct evhttp_request *request, void *userdata) {
         free(uri);
         return;
     }
-    
-    
-//    // Handle requests to /playlist/<playlist_uri>/<action>
-//    if (strncmp(entity, "playlist", 8) != 0) {
-//        evhttp_send_error(request, HTTP_BADREQUEST, "Bad Request");
-//        free(uri);
-//        return;
-//    }
-//    
-//    char *playlist_uri = strtok(NULL, "/");
-//    
-//    if (playlist_uri == NULL) {
-//        switch (http_method) {
-//            case EVHTTP_REQ_PUT:
-//            case EVHTTP_REQ_POST:
-//                put_playlist(NULL, request, session);
-//                break;
-//                
-//            default:
-//                send_error(request, HTTP_BADREQUEST, "Bad Request");
-//                break;
-//        }
-//        
-//        free(uri);
-//        return;
-//    }
-//    
-//    sp_link *playlist_link = sp_link_create_from_string(playlist_uri);
-//    
-//    if (playlist_link == NULL) {
-//        send_error(request, HTTP_NOTFOUND, "Playlist link not found");
-//        free(uri);
-//        return;
-//    }
-//    
-//    if (sp_link_type(playlist_link) != SP_LINKTYPE_PLAYLIST) {
-//        sp_link_release(playlist_link);
-//        send_error(request, HTTP_BADREQUEST, "Not a playlist link");
-//        free(uri);
-//        return;
-//    }
-//    
-//    sp_playlist *playlist = sp_playlist_create(session, playlist_link);
-//    sp_link_release(playlist_link);
-//    
-//    if (playlist == NULL) {
-//        send_error(request, HTTP_NOTFOUND, "Playlist not found");
-//        free(uri);
-//        return;
-//    }
-//    
-//    // Dispatch request
-//    char *action = strtok(NULL, "/");
-//    
-//    // Default request handler
-//    handle_playlist_fn request_callback = &not_implemented;
-//    void *callback_userdata = session;
-//    
-//    switch (http_method) {
-//        case EVHTTP_REQ_GET:
-//        {
-//            if (action == NULL) {
-//                // Send entire playlist
-//                request_callback = &get_playlist;
-//            } else if (strncmp(action, "collaborative", 13) == 0) {
-//                request_callback = &get_playlist_collaborative;
-//            } else if (strncmp(action, "subscribers", 11) == 0) {
-//                request_callback = &get_playlist_subscribers;
-//            }
-//        }
-//            break;
-//            
-//        case EVHTTP_REQ_PUT:
-//        case EVHTTP_REQ_POST:
-//        {
-//            if (strncmp(action, "add", 3) == 0) {
-//                request_callback = &put_playlist_add_tracks;
-//            } else if (strncmp(action, "remove", 6) == 0) {
-//                request_callback = &put_playlist_remove_tracks;
-//            } else if (strncmp(action, "patch", 5) == 0) {
-//                callback_userdata = state;
-//                request_callback = &put_playlist_patch;
-//            }
-//        }
-//            break;
-//            
-//        case EVHTTP_REQ_DELETE:
-//        {
-//            callback_userdata = state;
-//            request_callback = &delete_playlist;
-//        }
-//            break;
-//    }
-//    
-//    if (sp_playlist_is_loaded(playlist)) {
-//        request_callback(playlist, request, callback_userdata);
-//    } else {
-//        // Wait for playlist to load
-//        register_playlist_callbacks(playlist, request, request_callback,
-//                                    &playlist_state_changed_callbacks,
-//                                    callback_userdata);
-//    }
     free(uri);
 }
