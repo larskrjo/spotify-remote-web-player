@@ -34,7 +34,7 @@ Copy the content of frontend into the root folder of your webserver, and that's 
 #### Application Key
 In order to start the backend server, it needs a spotify application key. Go to https://devaccount.spotify.com/my-account/keys/, and log in with your premium spotify user account. Request a key if you haven't done that. Download the binary application key, name it spotify_appkey.key and store it in backend.
 #### Permissions
-Make sure backend/{OSX/Linux}/start is executable with the user you are going to run it with. If not, run:
+Make sure backend/{OSX/Linux}/start is executable for the executing user on the backend server. If not, run:
 ```
 chmod 777 backend/{OSX/Linux}/start
 ```
