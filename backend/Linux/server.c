@@ -145,7 +145,7 @@ static void playlist_dispatch_if_loaded(sp_playlist *playlist, void *userdata) {
 }
 
 void playlist_dispatch_if_updated(sp_playlist *playlist,
-                                         int done,
+                                         bool done,
                                          void *userdata) {
     if (done)
         playlist_dispatch(playlist, userdata);
