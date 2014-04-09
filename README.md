@@ -103,7 +103,7 @@ with your username, password, playlist name (do not use a playlist name with spa
 ###Frontend
 ####Set address for both the frontend server and backend server
 ```
-nano /frontend/js/config.js
+nano frontend/js/config.js
 // Change webaddress to the address of your frontend web server.
 // Change serveraddress to the combination of hostname and port in
 // the backend config file: hostname:port. Save.
