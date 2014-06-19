@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		2508913118EC0B9100F4986A /* audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 2508912618EC0B9100F4986A /* audio.c */; };
 		2508913218EC0B9100F4986A /* jukebox.c in Sources */ = {isa = PBXBuildFile; fileRef = 2508912918EC0B9100F4986A /* jukebox.c */; };
-		2508913318EC0B9100F4986A /* openal-audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 2508912A18EC0B9100F4986A /* openal-audio.c */; };
 		2508913418EC0B9100F4986A /* helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2508912E18EC0B9100F4986A /* helper.c */; };
 		2542BC6F18EDD917004F4982 /* globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 2542BC6E18EDD917004F4982 /* globals.c */; };
 		2542BC7618EDDB2B004F4982 /* container-callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 2542BC7518EDDB2B004F4982 /* container-callbacks.c */; };
 		2542BC7818EDDBC4004F4982 /* playlist-callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 2542BC7718EDDBC4004F4982 /* playlist-callbacks.c */; };
 		2545DCA118ED4C2F0021C445 /* sp-callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 2545DCA018ED4C2F0021C445 /* sp-callbacks.c */; };
 		2545DCA818ED4D270021C445 /* ws-callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 2545DCA718ED4D270021C445 /* ws-callbacks.c */; };
+		257A454C18F6CEBB0095D131 /* port-audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 257A454818F6C4A00095D131 /* port-audio.c */; };
 		25EE6EE418F1DC01000B4389 /* requests.c in Sources */ = {isa = PBXBuildFile; fileRef = 25EE6EE318F1DC01000B4389 /* requests.c */; };
 		25FA6FA118EB4E0C00CCC3EC /* diff.c in Sources */ = {isa = PBXBuildFile; fileRef = 25FA6F7A18EB31B100CCC3EC /* diff.c */; };
 		25FA6FA218EB4E0C00CCC3EC /* json.c in Sources */ = {isa = PBXBuildFile; fileRef = 25FA6F7C18EB31B100CCC3EC /* json.c */; };
@@ -43,6 +43,8 @@
 		2545DCA718ED4D270021C445 /* ws-callbacks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ws-callbacks.c"; sourceTree = "<group>"; };
 		2545DCA918ED4D3F0021C445 /* ws-callbacks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ws-callbacks.h"; sourceTree = "<group>"; };
 		2545DCAA18ED523D0021C445 /* state.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = state.h; sourceTree = "<group>"; };
+		257A454818F6C4A00095D131 /* port-audio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "port-audio.c"; sourceTree = "<group>"; };
+		257A454A18F6CE7A0095D131 /* port-audio-backup.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "port-audio-backup.c"; sourceTree = "<group>"; };
 		25C15D5518F577BB00B489EF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		25EE6EE218F1DBF5000B4389 /* requests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = requests.h; sourceTree = "<group>"; };
 		25EE6EE318F1DC01000B4389 /* requests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = requests.c; sourceTree = "<group>"; };
@@ -114,10 +116,12 @@
 				2542BC6E18EDD917004F4982 /* globals.c */,
 				2508912D18EC0B9100F4986A /* queue.h */,
 				2508912A18EC0B9100F4986A /* openal-audio.c */,
+				257A454818F6C4A00095D131 /* port-audio.c */,
 				25FA6F7D18EB31B100CCC3EC /* json.h */,
 				25FA6F7C18EB31B100CCC3EC /* json.c */,
 				2508912F18EC0B9100F4986A /* helper.h */,
 				2508912E18EC0B9100F4986A /* helper.c */,
+				257A454A18F6CE7A0095D131 /* port-audio-backup.c */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -222,9 +226,9 @@
 				2542BC6F18EDD917004F4982 /* globals.c in Sources */,
 				2542BC7618EDDB2B004F4982 /* container-callbacks.c in Sources */,
 				25FA6FA218EB4E0C00CCC3EC /* json.c in Sources */,
-				2508913318EC0B9100F4986A /* openal-audio.c in Sources */,
 				2545DCA118ED4C2F0021C445 /* sp-callbacks.c in Sources */,
 				2508913218EC0B9100F4986A /* jukebox.c in Sources */,
+				257A454C18F6CEBB0095D131 /* port-audio.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +337,7 @@
 					libspotify,
 					"-framework",
 					OpenAL,
+					"-lportaudio",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -366,6 +371,7 @@
 					libspotify,
 					"-framework",
 					OpenAL,
+					"-lportaudio",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
